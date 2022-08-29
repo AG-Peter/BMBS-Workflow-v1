@@ -857,72 +857,7 @@ class Cluster_sim:
             rlist.append(high_d_data_norm_concat[interv[0]:interv[1]])
 
         return rlist
-        
-        ##if self.is_class_object == True:
-        ##    avg = np.average(self.high_d_data_concat, axis=0)   #normalizes the generated distances: (value-avg)/stdev along each column
-        ##    sub = np.subtract(self.high_d_data_concat, avg)                  
-        ##    stdev = np.std(self.high_d_data_concat, axis = 0)
-        ##    self.high_d_data_concat = np.divide(sub, stdev)
-        ##
-        ##elif self.is_class_object == False:
-        ##    avg = np.average(self.high_d_data, axis=0)   #normalizes the generated distances: (value-avg)/stdev along each column
-        ##    sub = np.subtract(self.high_d_data, avg)                  
-        ##    stdev = np.std(self.high_d_data, axis = 0)
-        ##    self.high_d_data = np.divide(sub, stdev)
-    
-    
-    
-    
-    
-    #def save_evaluation_data(self, path):
-    #    if not os.path.exists(path):
-    #        os.makedirs(path)
-    #        
-    #    if self.is_class_object == True:
-    #        np.save(path + Cluster_sim.high_d_data_file, self.high_d_data_concat)
-    #        #np.save(path + cluster_id_file, self.cluster_ids_concat)
-    #        with open(path + Cluster_sim.frame_dict_file, "wb") as pipath:
-    #            pickle.dump(self.frame_dict_concat, pipath)
-    #        if Cluster_sim.contact_count == True:
-    #            np.save(path + tccpf_file, self.tccpf_concat)
-    #            np.save(path + caccpf_file, self.caccpf_concat)
-    #            np.save(path + clccpf_file, self.clccpf_concat)
-    #        
-    #    elif self.is_class_object == False:
-    #        np.save(path + Cluster_sim.high_d_data_file, self.high_d_data)
-    #        #np.save(path + cluster_id_file, self.cluster_ids)
-    #        with open(path + Cluster_sim.frame_dict_file, "wb") as pipath:
-    #            pickle.dump(self.frame_dict, pipath)
-    #        if self.contact_count == True:
-    #            np.save(path + tccpf_file, self.tccpf)
-    #            np.save(path + caccpf_file, self.caccpf)
-    #            np.save(path + clccpf_file, self.clccpf)
-    #            
-    #def load_evaluation_data(self, path):
-    #    if self.is_class_object == True:
-    #        self.high_d_data_concat = np.load(path + Cluster_sim.high_d_data_file)
-    #        #self.cluster_ids_concat = np.load(path + cluster_id_file)
-    #        with open(path + Cluster_sim.frame_dict_file, "rb") as pipath:
-    #            self.frame_dict_concat = pickle.load(pipath)
-    #        #try:
-    #        #    self.tccpf_concat = np.load(path + tccpf_file)
-    #        #    self.caccpf_concat = np.load(path + caccpf_file)
-    #        #    self.clccpf_concat = np.load(path + clccpf_file)
-    #        #except:
-    #        #    pass
-    #        
-    #    elif self.is_class_object == False:
-    #        self.high_d_data = np.load(path + Cluster_sim.high_d_data_file)
-    #        #self.cluster_ids = np.load(path + cluster_id_file)
-    #        with open(path + Cluster_sim.frame_dict_file, "rb") as pipath:
-    #            self.frame_dict = pickle.load(pipath)
-    #        #try:
-    #        #    self.tccpf = np.load(path + tccpf_file)
-    #        #    self.caccpf = np.load(path + caccpf_file)
-    #        #    self.clccpf = np.load(path + clccpf_file)
-    #        #except:
-    #        #    pass
-            
+                   
            
 def concatenate_high_d_data(high_d_data_list, frame_dict_list):
     #also concatenates high d data and frame dicts, but takes them as input directly
