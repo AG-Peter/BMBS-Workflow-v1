@@ -13,6 +13,7 @@ import pickle
 import re
 import encodermap as em
 
+#used as template to initialize sims
 class Peptides:
     peptides = []
     def __init__(self, charge_state, peptide_name, cluster_name):
@@ -52,6 +53,8 @@ class Cluster_sim:
         #self.contact_count = False      
         #self.ndx_path = None
         self.sim_setup_path = None
+        
+        #if statement to create specialized versions of the class(differentiate cg from aa)
         if "CG_sim" in self.sim_type_folder:
             self.cluster_directory = os.path.join(Cluster_sim.base_directory, self.sim_type_folder, self.charge_folder, self.peptide_folder, self.cluster_folder, "plain/")
             self.sim_directory = os.path.join(self.cluster_directory, "4-md/")

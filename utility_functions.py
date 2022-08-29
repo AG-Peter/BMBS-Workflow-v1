@@ -128,6 +128,7 @@ def remote_file_exists(client, ssh, file_path, search_depth = 1, base_path = Non
     return False
 
 def get_slurm_job_status(client, jobid):
+    #get status of a job on cluster
     status = command_return(client, "sacct --format State -j " + str(jobid))
     try:
         status = status[2]
@@ -136,7 +137,7 @@ def get_slurm_job_status(client, jobid):
     return status
 
 def make_run_folder(path):
-    #makes the next iteration of the run folder
+    #makes the next iteration of the run folder(if run1 exists --> run2,...)
     if not os.path.exists(path):
         os.makedirs(path)
     cwd = os.getcwd()
